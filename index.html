@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style type="text/css">
+            body { margin: 0; position: fixed; top: 0; right: 0; bottom: 0; left :0; }
+            svg { width: 1920px; height: 1080px }   
+          </style>
+        <link rel="stylesheet" type="text/css" href="kiosk.css" />        
+    </head>
+    <body>
+        <script type="text/javascript">
+            d3.selectAll("svg > *").remove();
+
+            var data = {
+                "polygons": [ /* x,y x1,y1 etc*/
+                // left
+                    {"fill": "#73aadb", "points": "0,0 100,0 0,800", "opacity": 1 }, // tl bl tr
+                    {"fill": "#ff0000" /* "#d70d16" */, "points": "0,1180 1300,1180 0,600", "opacity": 1 }, // bl tr br
+                //right
+                    {"fill": "#73aadb" /* "#cd1ef2" */, "points": "1500,1180 1760,0 1920,0 1920,1180", "opacity": 0.4 }, //  bl tl tr br
+                    {"fill": "#73aadb", "points": "1670,1180 1460,0 1920,0 1920,1180", "opacity": 0.4 }, // bl tl tr br
+                    {"fill": "#ff0000" /* #d24c4c" */, "points": "1300,1180 1920,1180 1920,400", "opacity": 0.8 }, // bl br tr
+                    {"fill": "#ff0000", "points": "1400,0 1920,0 1920,1180", "opacity": 0.85 }, // tl tr br
+                    {"fill": "#73aadb" /* "#cd1ef2" */, "points": "1920,0 1740,0 1840,1180 1920,1180", "opacity": 0.5 }, // bl tl tr br
+                    {"fill": "#73aadb" /* "#cd1ef2" */, "points": "1920,1180 1920,0 1920,0 1920,1180", "opacity": 0.85 }, // bl tl tr br
+                    {"fill": "#73aadb" /* #d24c4c" */, "points": "1550,1180 1920,1180 1920,500", "opacity": 0.6 }, // bl br tr
+                ],
+                "lines": [
+                    { "stroke": "#e0e0e0", "style": "line", "x1": 1000, "y1": 1180, "x2": 1660, "y2": 560, "width": 3, "opacity": 0.5 },
+                    { "stroke": "#dcdcdc", "style": "line", "x1": 1440, "y1": 0, "x2": 1640, "y2": 1180, "width": 2, "opacity": 0.5 }
+                ]
+            };
+            var svgContainer = d3.select("body")
+                .append("svg");
+
+            svgContainer
+                .append("foreignObject")
+                .attr("width", 2040)
+                .attr("height", 5000)
+                //.attr("overflow-x", "scroll")
+                .append("xhtml:body")
+                .append("iframe")
+                .style("position","relative")
+                .style("top","0")
+                .style("opacity","0.85")
+                .attr("src","slides.html")
+                .attr("width",1920)
+                .attr("height",1080)
+                .attr("frameborder","0");
+
+            var line = svgContainer
+                .selectAll("line")
+                .data(data.lines)
+                .enter()
+                .append("line")
+                .attr("x1", function (d) { return d.x1; })
+                .attr("y1", function (d) { return d.y1; })
+                .attr("x2", function (d) { return d.x2; })
+                .attr("y2", function (d) { return d.y2; })
+                .attr("stroke-width", function (d) { return d.width; })
+                .attr("stroke", function (d) { return d.stroke; })
+                .style("opacity", function (d) { return d.opacity; });
+
+            var rectangle = svgContainer
+                .selectAll("polygon")
+                .data(data.polygons)
+                .enter()
+                .append("polygon")
+                .attr("points", function (d) { return d.points; })
+                .attr("fill", function (c) { return c.fill; })
+                .style("opacity", function (d) { return d.opacity; });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,287 @@
+#presentation {
+    width: 100%;
+    position: relative
+}
+
+#splash {
+    width: 100%;
+    z-index: 100;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation-name: opening;
+}
+body {
+    margin: 0;
+}
+/* Sections are all in the same place */
+#content {
+    position: relative;
+    width: 60%;
+    margin: 0px auto;
+    height: 1080px;
+    margin-left: 240px; 
+}
+#splash img {
+    margin: 200px auto;
+}
+
+.large { font-size: 60px; margin: 10px 0; font-weight: 700 } /* 40*/
+.medium { font-size: 48px; margin: 10px 0; font-weight: 600 } /* 32 */
+.small { font-size: 32px; font-weight: 600; text-align: left; } /* 28 */
+.tiny { font-size: 36px ; margin: 10px 0; font-weight: 500 } /* 24 */
+.vtiny { font-size: 20px }
+.red { color: #FF7000 }
+.blue { color: #1F497D }
+.blue2 { color: #0070C0 }
+
+/* Hide sections by default */
+div#rfp,
+div#nft {
+    width: 100%;
+    position: absolute;
+    opacity:  0;
+}
+p {
+    font-family: Calibri;     
+    font-weight: 600;
+    color: #1F497D;
+    text-align: center;    
+    font-size: 64px;
+    width: 100%;
+    margin:  0;    
+}
+/* Hide items by default */
+div#rfp p,
+div#nft > div > div
+{
+    font-family: Calibri;     
+    font-weight: 600;
+    color: #1F497D;
+    text-align: center;    
+    font-size: 64px;
+    width: 100%;
+    margin:  0;
+    opacity:  0;
+    position: absolute;        
+}
+div#nft06 > p,
+div#nft03 > div
+{
+    opacity:  0;
+}
+div#splash,
+div#rfp p, 
+div#nft, 
+-div#nft > div, 
+div#nft > div > div, 
+div#content > div,
+div#nft05 > div > div > p,
+div#nft05 > div > div > ul,
+div#nft06 > p,
+div#nft03 > div
+{
+    animation-duration: 180s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.25s;
+}
+
+/* Radio Frimley Park */
+div#rfp { animation-name: step01to19; }
+
+p#rfp01a { animation-name: step01a; }
+p#rfp01b { animation-name: step01b; }
+p#rfp02a { animation-name: step02a; }
+p#rfp02b { animation-name: step02b; }
+p#rfp03 { animation-name: step03; }
+p#rfp04 { animation-name: step04; }
+
+p#rfp05a { animation-name: step05a; }
+p#rfp05b { animation-name: step05b; }
+
+p#rfp06a { animation-name: step06a; }
+p#rfp06b { animation-name: step06b; }
+p#rfp06c { animation-name: step06c; }
+p#rfp06d { animation-name: step06d; }
+p#rfp06e { animation-name: step06e; }
+
+p#rfp07 { animation-name: step07; }
+p#rfp08 { animation-name: step08; }
+p#rfp09 { animation-name: step09; }
+p#rfp10 { animation-name: step10; }
+
+p#rfp11a { animation-name: step11a; }
+p#rfp11b { animation-name: step11b; }
+
+p#rfp12a { animation-name: step12a; }
+p#rfp12b { animation-name: step12b; }
+
+p#rfp13a { animation-name: step13a; }
+p#rfp13b { animation-name: step13b; }
+p#rfp13c { animation-name: step13c; }
+
+p#rfp14a { animation-name: step14a; }
+p#rfp14b { animation-name: step14b; }
+p#rfp14c { animation-name: step14c; }
+
+p#rfp15 { animation-name: step15; }
+p#rfp16a { animation-name: step16a; }
+p#rfp16b { animation-name: step16b; }
+p#rfp17 { animation-name: step17; }
+p#rfp18 { animation-name: step18; }
+p#rfp19 { animation-name: step19; }
+
+/* Frimley Health NHS Foundation Trust */ 
+div#nft { animation-name: step20to25; }
+
+div#nft01 { animation-name: step20; }
+div#nft02 { animation-name: step21; }
+div#nft03 { animation-name: step22; }
+div#nft03a { animation-name: step22a; }
+div#nft03b { animation-name: step22b; }
+div#nft04 { animation-name: step23; }
+
+div#nft05 { animation-name: step24; }
+p#nft05a { animation-name: step24a; }
+p#nft05b { animation-name: step24b; }
+p#nft05c { animation-name: step24c; }
+p#nft05d, ul#nft05e { animation-name: step24d; }
+
+div#nft06 { animation-name: step25; }
+
+p#nft06a { animation-name: step25a; }
+p#nft06b { animation-name: step25b; }
+p#nft06c { animation-name: step25c; }
+p#nft06d { animation-name: step25d; }
+
+-p#rfp20 { animation-name: step26; }
+
+#line {
+    top: 80px;
+    clear: both;
+    background-color: #295A97;
+    height: 9px;
+    width: 100%;
+    box-shadow: 2px 2px 4px #aaa;
+    margin-top: 80px;
+}
+@keyframes opening { 1%, 100% {top: 0px; } 4%,99% {top: 1200px; } } /* hides RFP header */
+
+/* Radio Frimley Park */
+@keyframes step01to19 { 1% {opacity: 0; } 2%,80% { opacity: 1; } 81% { opacity:  0; visibility: hidden; } }
+
+@keyframes step01a { 1% {opacity: 0; } 2%,4% { opacity: 1; } 5% { opacity:  0; visibility: hidden; } }
+@keyframes step01b { 2% {opacity: 0; } 4%,5% { opacity: 1; } 6% { opacity:  0; visibility: hidden; } }
+@keyframes step02a { 4% {opacity: 0; } 6%,8% { opacity: 1; } 9% { opacity: 0; visibility: hidden; } }
+@keyframes step02b { 7% {opacity: 0; } 8%,9% { opacity: 1; } 10% { opacity: 0; visibility: hidden; } }
+@keyframes step03 { 9% {opacity: 0; } 10%,13% { opacity: 1; } 14% { opacity: 0; visibility: hidden; } }
+@keyframes step04a { 13% {opacity: 0; } 14%,15% { opacity: 1; } 16% { opacity: 0; visibility: hidden; } }
+@keyframes step04b { 15% {opacity: 0; } 16%,17% { opacity: 1; } 18% { opacity: 0; visibility: hidden; } }
+@keyframes step05a { 17% {opacity: 0; } 18%,19% { opacity: 1; } 20% { opacity: 0; visibility: hidden; } }
+@keyframes step05b { 19% {opacity: 0; } 20%,21% { opacity: 1; } 22% { opacity: 0; visibility: hidden; } }
+@keyframes step06a { 21% {opacity: 0; } 22%,22% { opacity: 1; } 23% { opacity: 0; visibility: hidden; } }
+@keyframes step06b { 22% {opacity: 0; } 23%,23% { opacity: 1; } 24% { opacity: 0; visibility: hidden; } }
+@keyframes step06c { 23% {opacity: 0; } 24%,24% { opacity: 1; } 25% { opacity: 0; visibility: hidden; } }
+@keyframes step06d { 24% {opacity: 0; } 25%,25% { opacity: 1; } 26% { opacity: 0; visibility: hidden; } }
+@keyframes step06e { 25% {opacity: 0; } 26%,26% { opacity: 1; } 27% { opacity: 0; visibility: hidden; } }
+@keyframes step07 { 26% {opacity: 0; } 27%,30% { opacity: 1; } 31% { opacity: 0; visibility: hidden; } }
+@keyframes step08 { 30% {opacity: 0; } 31%,34% { opacity: 1; } 35% { opacity: 0; visibility: hidden; } }
+@keyframes step09 { 34% {opacity: 0; } 35%,38% { opacity: 1; } 39% { opacity: 0; visibility: hidden; } }
+@keyframes step10 { 38% {opacity: 0; } 39%,42% { opacity: 1; } 43% { opacity: 0; visibility: hidden; } }
+@keyframes step11a { 42% {opacity: 0; } 43%,44% { opacity: 1; } 45% { opacity: 0; visibility: hidden; } }
+@keyframes step11b { 44% {opacity: 0; } 45%,46% { opacity: 1; } 47% { opacity: 0; visibility: hidden; } }
+@keyframes step12a { 46% {opacity: 0; } 47%,48% { opacity: 1; } 49% { opacity: 0; visibility: hidden; } }
+@keyframes step12b { 48% {opacity: 0; } 49%,50% { opacity: 1; } 51% { opacity: 0; visibility: hidden; } }
+@keyframes step13a { 50% {opacity: 0; } 51%,52% { opacity: 1; } 53% { opacity: 0; visibility: hidden; } }
+@keyframes step13b { 52% {opacity: 0; } 53%,54% { opacity: 1; } 55% { opacity: 0; visibility: hidden; } }
+@keyframes step13c { 54% {opacity: 0; } 55%,56% { opacity: 1; } 57% { opacity: 0; visibility: hidden; } }
+
+@keyframes step14a { 56% {opacity: 0; } 57%,58% { opacity: 1; } 59% { opacity: 0; visibility: hidden; } }
+@keyframes step14b { 58% {opacity: 0; } 59%,60% { opacity: 1; } 61% { opacity: 0; visibility: hidden; } }
+@keyframes step14c { 60% {opacity: 0; } 61%,62% { opacity: 1; } 63% { opacity: 0; visibility: hidden; } }
+
+@keyframes step15 { 62% {opacity: 0; } 63%,66% { opacity: 1; } 67% { opacity: 0; visibility: hidden; } }
+
+@keyframes step16a { 66% {opacity: 0; } 67%,68% { opacity: 1; } 69% { opacity: 0; visibility: hidden; } }
+@keyframes step16b { 68% {opacity: 0; } 69%,70% { opacity: 1; } 71% { opacity: 0; visibility: hidden; } }
+
+@keyframes step17 { 70% {opacity: 0; } 71%,73% { opacity: 1; } 74% { opacity: 0; visibility: hidden; } }
+@keyframes step18 { 73% {opacity: 0; } 74%,76% { opacity: 1; } 77% { opacity: 0; visibility: hidden; } }
+@keyframes step19 { 76% {opacity: 0; } 77%,80% { opacity: 1; } 81% { opacity: 0; visibility: hidden; } }
+
+/* Frimley Health NHS Foundation Trust */
+@keyframes step20to25 { 80% {opacity: 0; } 81%,100% { opacity: 1; } 1% { opacity: 0; visibility: hidden; } }
+
+@keyframes step20 { 80% {opacity: 0; } 81%,83% { opacity: 1; } 84% { opacity: 0; visibility: hidden; } }
+@keyframes step21 { 83% {opacity: 0; } 84%,86% { opacity: 1; } 87% { opacity: 0; visibility: hidden; } }
+
+@keyframes step22 { 86% {opacity: 0; } 87%,89% { opacity: 1; } 90% { opacity: 0; visibility: hidden; } }
+@keyframes step22a { 86% {opacity: 0; } 87%,89% { opacity: 1; } 90% { opacity: 0; visibility: hidden; } }
+@keyframes step22b { 87% {opacity: 0; } 88%,89% { opacity: 1; } 90% { opacity: 0; visibility: hidden; } }
+@keyframes step23 { 89% {opacity: 0; } 90%,91% { opacity: 1; } 92% { opacity: 0; visibility: hidden; } }
+
+@keyframes step24 { 91% {opacity: 0; } 92%,95% { opacity: 1; } 96% { opacity: 0; visibility: hidden; } }
+@keyframes step24a { 91% {opacity: 0; } 92%,95% { opacity: 1; } 96% { opacity: 0; visibility: hidden; } }
+@keyframes step24b { 92% {opacity: 0; } 93%,95% { opacity: 1; } 96% { opacity: 0; visibility: hidden; } }
+@keyframes step24c { 93% {opacity: 0; } 94%,95% { opacity: 1; } 96% { opacity: 0; visibility: hidden; } }
+@keyframes step24d { 94% {opacity: 0; } 95%,95% { opacity: 1; } 96% { opacity: 0; visibility: hidden; } }
+
+@keyframes step25 { 95% {opacity: 0; } 96%,99% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes step25a { 95% {opacity: 0; } 96%,99% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes step25b { 96% {opacity: 0; } 97%,99% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes step25c { 97% {opacity: 0; } 98%,99% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes step25d { 98% {opacity: 0; } 99%,99% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+
+#content svg.equalizer {
+  position: absolute;
+  left: 350px;
+  bottom: 80px;
+  height: 100px;
+  width: 100px;
+  transform: rotate(180deg);
+}
+
+.bar {
+  -fill: #d70d16;
+  fill: #ff0000;
+  width: 18px;
+  animation: equalize 4s 0s infinite;
+}
+
+.bar:nth-child(1) { animation-delay: -1.9s; }
+.bar:nth-child(2) { animation-delay: -2s; }
+.bar:nth-child(3) { animation-delay: -2.3s; }
+.bar:nth-child(4) { animation-delay: -2.4s; }
+.bar:nth-child(5) { animation-delay: -2.1s; }
+
+@keyframes equalize {
+  0% { height: 60px; }
+  4% { height: 50px; }
+  8% { height: 40px; }
+  12% { height: 30px; }
+  16% { height: 20px; }
+  20% { height: 30px; }
+  24% { height: 40px; }
+  28% { height: 10px; }
+  32% { height: 40px; }
+  36% { height: 60px; }
+  40% { height: 20px; }
+  44% { height: 40px; }
+  48% { height: 70px; }
+  52% { height: 30px; }
+  56% { height: 10px; }
+  60% { height: 30px; }
+  64% { height: 50px; }
+  68% { height: 60px; }
+  72% { height: 70px; }
+  76% { height: 80px; }
+  80% { height: 70px; }
+  84% { height: 60px; }
+  88% { height: 50px; }
+  92% { height: 60px; }
+  96% { height: 70px; }
+  100% { height: 80px; }
+}
